@@ -1,102 +1,158 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
     color: #fff;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-header {
-    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Transparent dark overlay */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    position: relative;
     padding: 40px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.3em;
-    margin-top: 10px;
-}
-
-section {
-    margin: 40px 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #FFB300;
-    font-size: 2.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 90px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* Profile Photo */
+  .profile-photo {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+  }
+  
+  .profile-photo img {
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .profile-photo img:hover {
+    transform: translateY(-5px) scale(1.03);
+  }
+  
+  /* About Text */
+  .about {
+    max-width: 600px;
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-left: -150px;
+  }
+  
+  .about h1 {
+    font-size: 3rem;
     margin-bottom: 20px;
-}
-
-.project, .skills, .extracurricular {
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-ul li {
-    margin: 12px 0;
-    font-size: 1.2em;
-}
-
-ul li a {
-    color: #FFB300;
+  }
+  
+  .about h1 span {
+    color: #ffd700;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+  }
+  
+  /* Footer Links */
+  footer {
+    position: absolute;
+    left: 500px;
+    bottom: 30px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  footer a {
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-ul li a:hover {
+    color: #ffd700;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
     color: #ffffff;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Hover Effects */
-section:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-h2:hover {
-    color: #FF6600;
-}
-
-.project h3, .skills ul li {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.project h3:hover, .skills ul li:hover {
-    transform: translateX(10px);
-    color: #FF6600;
-}
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .overlay {
+      padding: 20px;
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+  
+    .profile-photo {
+      position: static;
+      margin-top: 20px;
+      transform: none;
+      text-align: center;
+    }
+  
+    .profile-photo img {
+      width: 220px;
+      border-radius: 10px;
+    }
+  
+    .about {
+      margin-left: 0;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+    }
+  
+    .about h1 {
+      font-size: 2rem;
+    }
+  
+    .about p {
+      font-size: 1rem;
+    }
+  
+    footer {
+      position: static;
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+  }
+   
+  
